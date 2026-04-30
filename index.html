@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ezekiel Soh — Cloud & DevOps Engineer. AWS Certified. Kubernetes. DevSecOps." />
+  <title>Ezekiel Soh — Cloud & DevOps Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ══ NAV ══════════════════════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="#" class="logo">
+        <div class="logo-avatar">EZ</div>
+        <div class="logo-info">
+          <span class="logo-name">Ezekiel Soh</span>
+          <span class="logo-role mono" data-i18n="nav.role">Cloud & DevOps</span>
+        </div>
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="#about"      data-i18n="nav.about">À propos</a></li>
+        <li><a href="#experience" data-i18n="nav.exp">Expérience</a></li>
+        <li><a href="#skills"     data-i18n="nav.skills">Compétences</a></li>
+        <li><a href="#projects"   data-i18n="nav.projects">Projets</a></li>
+        <li><a href="#contact"    data-i18n="nav.contact">Contact</a></li>
+      </ul>
+
+      <div class="nav__right">
+        <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+          <span class="lt-active" id="langLabel">FR</span>
+          <span class="lt-sep">/</span>
+          <span class="lt-other" id="langOther">EN</span>
+        </button>
+        <a href="#contact" class="btn-primary" data-i18n="nav.hire">Me contacter</a>
+      </div>
+
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="#about"      class="ml" data-i18n="nav.about">À propos</a>
+      <a href="#experience" class="ml" data-i18n="nav.exp">Expérience</a>
+      <a href="#skills"     class="ml" data-i18n="nav.skills">Compétences</a>
+      <a href="#projects"   class="ml" data-i18n="nav.projects">Projets</a>
+      <a href="#contact"    class="ml" data-i18n="nav.contact">Contact</a>
+      <div class="ml-lang">
+        <button class="lang-toggle lang-toggle--mobile" id="langToggleMobile">
+          <span id="langLabelM">FR</span> / <span id="langOtherM">EN</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ═════════════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <div class="hero__status reveal">
+          <span class="status-badge">
+            <span class="status-dot"></span>
+            <span data-i18n="hero.available">Disponible pour de nouveaux projets</span>
+          </span>
+        </div>
+
+        <h1 class="hero__name reveal d1">
+          Dombissi Soh<br/>
+          <span class="name-accent">Kamte Ezekiel</span>
+        </h1>
+
+        <div class="hero__titles reveal d2">
+          <span class="ht-item active" data-i18n="hero.title1">Cloud & DevOps Engineer</span>
+          <span class="ht-sep">·</span>
+          <span class="ht-item" data-i18n="hero.title2">AWS Certified</span>
+          <span class="ht-sep">·</span>
+          <span class="ht-item" data-i18n="hero.title3">DevSecOps Specialist</span>
+        </div>
+
+        <p class="hero__desc reveal d3" data-i18n="hero.desc">
+          Ingénieur DevSecOps & Cloud avec 5+ ans d'expérience. Je conçois, sécurise et opère
+          des infrastructures critiques sur AWS et Kubernetes. Réduction des coûts cloud de 60%
+          (1 500$ → 600$/mois), SLA 99,95%, pics à 1M+ requêtes absorbés sans incident.
+        </p>
+
+        <div class="hero__ctas reveal d4">
+          <a href="#projects" class="btn-primary btn-lg" data-i18n="hero.cta1">Voir mes projets</a>
+          <a href="#contact"  class="btn-ghost" data-i18n="hero.cta2">Me contacter</a>
+          <a href="cv.pdf" class="btn-ghost btn-cv" download>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span data-i18n="hero.cv">Télécharger CV</span>
+          </a>
+        </div>
+
+        <div class="hero__links reveal d4">
+          <a href="https://github.com/theopen4" target="_blank" rel="noopener" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/ezekiel-soh-dombissi-a1591b240/" target="_blank" rel="noopener" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="mailto:kielze86@gmail.com" class="social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            kielze86@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__visual reveal d2">
+        <div class="hero-photo-wrap">
+          <div class="hero-photo-ring">
+            <img src="photo.jpg" alt="Ezekiel Soh — DevSecOps & Cloud Engineer" class="hero-photo" />
+          </div>
+          <div class="hero-photo-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.07.056.14.056.2 0 .087-.052.175-.164.263l-.543.362c-.077.052-.155.078-.224.078-.087 0-.174-.04-.261-.12a2.7 2.7 0 01-.313-.41 6.72 6.72 0 01-.27-.516c-.678.8-1.53 1.2-2.556 1.2-.73 0-1.31-.21-1.737-.63-.427-.42-.64-.978-.64-1.674 0-.74.262-1.34.79-1.797.526-.456 1.227-.684 2.115-.684.294 0 .596.026.914.07.319.044.645.113.988.2v-.628c0-.653-.136-1.11-.4-1.375-.27-.264-.727-.394-1.376-.394-.295 0-.598.035-.907.108-.31.072-.614.164-.907.276-.136.058-.235.09-.296.103-.062.012-.107.018-.14.018-.122 0-.183-.09-.183-.274v-.432c0-.14.017-.246.057-.313a.59.59 0 01.226-.183c.295-.15.65-.277 1.063-.378a5.1 5.1 0 011.3-.156c.99 0 1.714.225 2.18.674.46.45.693 1.133.693 2.054l.006 2.71zm-3.53.97c.283 0 .575-.052.882-.156.307-.104.58-.292.81-.548.137-.164.24-.344.292-.553.05-.207.082-.457.082-.75v-.362a7.199 7.199 0 00-.793-.147 6.496 6.496 0 00-.81-.052c-.578 0-1.003.113-1.287.344-.283.232-.422.556-.422.978 0 .4.1.697.31.898.202.205.49.307.868.307zM13.99 12.27c-.154 0-.258-.026-.326-.083a.67.67 0 01-.19-.313l-2.127-7.006c-.07-.226-.104-.373-.104-.444 0-.174.087-.27.261-.27h1.065c.163 0 .274.026.336.083a.647.647 0 01.184.313l1.52 5.992 1.411-5.992a.608.608 0 01.178-.313.55.55 0 01.344-.083h.869c.163 0 .274.026.344.083a.6.6 0 01.175.313l1.43 6.071 1.568-6.07a.664.664 0 01.19-.314.59.59 0 01.342-.083h1.012c.174 0 .266.09.266.27 0 .053-.01.108-.022.17-.012.062-.036.148-.076.265l-2.18 7.005a.636.636 0 01-.19.314c-.07.057-.18.083-.327.083h-.932a.58.58 0 01-.343-.083.648.648 0 01-.177-.32l-1.403-5.826-1.395 5.82a.639.639 0 01-.177.32.572.572 0 01-.344.083zm11.623.257c-.564 0-1.127-.064-1.673-.192-.546-.128-.97-.27-1.25-.427-.175-.1-.294-.208-.332-.312a.79.79 0 01-.057-.296v-.449c0-.183.069-.274.2-.274.052 0 .103.008.156.026.052.018.13.052.218.087.294.13.614.233.957.303a5.16 5.16 0 001.02.104c.54 0 .962-.096 1.261-.288.3-.192.451-.467.451-.82 0-.241-.075-.44-.228-.601-.152-.161-.44-.308-.862-.448l-1.238-.384c-.625-.196-1.088-.485-1.38-.867a2.078 2.078 0 01-.434-1.28c0-.37.078-.694.236-.972.157-.277.37-.519.633-.71.262-.197.56-.344.905-.445a3.86 3.86 0 011.078-.148c.19 0 .386.01.576.036.196.026.373.062.546.104.166.044.326.09.472.14.148.05.262.1.345.15.116.07.2.14.249.218a.54.54 0 01.07.283v.415c0 .183-.07.278-.2.278a.929.929 0 01-.344-.113c-.46-.208-.975-.313-1.545-.313-.49 0-.876.083-1.15.252-.274.169-.413.424-.413.77 0 .24.085.444.254.61.17.166.484.33.94.48l1.213.383c.617.196 1.064.473 1.338.831.274.358.408.768.408 1.224 0 .378-.075.72-.222 1.016a2.34 2.34 0 01-.63.762c-.272.21-.596.371-.972.48a4.31 4.31 0 01-1.255.174z"/></svg>
+            <span class="mono">AWS Certified · Solutions Architect</span>
+          </div>
+        </div>
+        <div class="stats-board">
+          <div class="sb-header">
+            <span class="mono sb-title" data-i18n="hero.stats">/ Métriques clés</span>
+            <div class="sb-live">
+              <span class="asb-dot asb-green"></span>
+              <span class="mono" data-i18n="hero.live">production live</span>
+            </div>
+          </div>
+          <div class="sb-grid">
+            <div class="sb-stat">
+              <span class="ss-val" data-target="5">0</span><span class="ss-plus">+ ans</span>
+              <span class="ss-label" data-i18n="stat.exp">Expérience</span>
+            </div>
+            <div class="sb-stat">
+              <span class="ss-val" data-target="8">0</span>
+              <span class="ss-label" data-i18n="stat.k8s">Clusters K8s prod</span>
+            </div>
+            <div class="sb-stat">
+              <span class="ss-val" data-target="60">0</span><span class="ss-plus">%</span>
+              <span class="ss-label" data-i18n="stat.cost">Réduction coûts</span>
+            </div>
+            <div class="sb-stat">
+              <span class="ss-val" data-target="99">0</span><span class="ss-plus">.95%</span>
+              <span class="ss-label" data-i18n="stat.uptime">Uptime garanti</span>
+            </div>
+            <div class="sb-stat">
+              <span class="ss-val" data-target="1">0</span><span class="ss-plus">M+</span>
+              <span class="ss-label" data-i18n="stat.req">Requêtes/jour</span>
+            </div>
+            <div class="sb-stat">
+              <span class="ss-val" data-target="15">0</span><span class="ss-plus">+</span>
+              <span class="ss-label" data-i18n="stat.apis">APIs en production</span>
+            </div>
+          </div>
+          <div class="sb-footer">
+            <div class="sbf-item">
+              <span class="asb-dot asb-green"></span>
+              <span class="mono" data-i18n="stat.deploy">50+ déploiements/semaine</span>
+            </div>
+            <div class="sbf-item">
+              <span class="asb-dot asb-blue"></span>
+              <span class="mono" data-i18n="stat.aws">AWS Certified</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ABOUT ════════════════════════════════════════════════════ -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about__inner">
+        <div class="about__photo reveal">
+          <div class="about-photo-frame">
+            <img src="photo.jpg" alt="Ezekiel Soh" class="about-photo" />
+            <div class="about-photo-tag">
+              <span class="status-dot"></span>
+              <span class="mono" data-i18n="hero.available">Disponible</span>
+            </div>
+          </div>
+        </div>
+        <div class="about__left reveal d1">
+          <span class="eyebrow" data-i18n="about.label">À propos</span>
+          <h2 class="section-title" data-i18n="about.title">Double expertise.<br/>DevOps & Backend.</h2>
+          <p class="about__lead" data-i18n="about.lead">
+            Ingénieur Cloud & DevOps avec 5 ans d'expérience combinée — 3 ans DevOps en production et 2 ans de développement Backend.
+          </p>
+          <p class="about__body" data-i18n="about.body1">
+            Je travaille chez Kaeyros Analytics où je gère une infrastructure critique supportant 1M+ requêtes/jour sur 8 clusters Kubernetes. Mon approche DevSecOps intègre la sécurité à chaque étape du pipeline, pas en fin de cycle.
+          </p>
+          <p class="about__body" data-i18n="about.body2">
+            Ma double compétence en développement backend (Node.js, NestJS, Python) et en infrastructure me permet de comprendre les enjeux des deux côtés — et de construire des systèmes qui fonctionnent vraiment en production.
+          </p>
+          <div class="about__tags">
+            <span>Yaoundé, Cameroun</span>
+            <span data-i18n="about.remote">Remote available</span>
+            <span data-i18n="about.languages">FR · EN</span>
+          </div>
+        </div>
+        <div class="about__right reveal d2">
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <span class="tl-date mono">Nov. 2025 – <span data-i18n="tl.present">Présent</span></span>
+                <h4 data-i18n="tl.job0">Consultant DevSecOps</h4>
+                <span class="tl-company"><a href="https://nyxentech.io" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:none;">NyxenTech</a> · Remote</span>
+                <p data-i18n="tl.job0desc">AWS Zero Trust, SOC 2, OPA Gatekeeper, pipelines GitOps, -40% coûts cloud.</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot tl-dot--past"></div>
+              <div class="tl-content">
+                <span class="tl-date mono">Sept 2023 – Fév. 2026</span>
+                <h4 data-i18n="tl.job1">Ingénieur DevSecOps & Cloud</h4>
+                <span class="tl-company">Kaeyros Analytics · Yaoundé</span>
+                <p data-i18n="tl.job1desc">8 clusters K8s, CI/CD GitOps, DevSecOps, SAST/DAST, -60% coûts cloud, 5+ projets simultanés.</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot tl-dot--past"></div>
+              <div class="tl-content">
+                <span class="tl-date mono">Jan 2021 – Août 2023</span>
+                <h4 data-i18n="tl.job2">Backend Developer & Cloud Consultant</h4>
+                <span class="tl-company">Freelance · Remote</span>
+                <p data-i18n="tl.job2desc">10+ APIs RESTful/GraphQL, 50K+ utilisateurs/jour, plateformes gouvernementales allemandes.</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot tl-dot--edu"></div>
+              <div class="tl-content">
+                <span class="tl-date mono">2023</span>
+                <h4 data-i18n="tl.edu1">ALX Software Engineering</h4>
+                <span class="tl-company">ALX Africa · Backend Specialization</span>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot tl-dot--edu"></div>
+              <div class="tl-content">
+                <span class="tl-date mono">~2021</span>
+                <h4 data-i18n="tl.edu2">Licence Génie Logiciel</h4>
+                <span class="tl-company">Université de Siantou · Cameroun</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ EXPERIENCE ═══════════════════════════════════════════════ -->
+  <section class="experience section" id="experience">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="exp.label">Expérience</span>
+        <h2 class="section-title" data-i18n="exp.title">Parcours professionnel.</h2>
+      </div>
+
+      <div class="exp-list">
+
+        <!-- NyxenTech — Poste actuel -->
+        <div class="exp-card exp-card--current reveal">
+          <div class="exp-card__header">
+            <div class="exp-card__left">
+              <h3 data-i18n="exp3.title">Consultant DevSecOps</h3>
+              <div class="exp-card__company">
+                <a href="https://nyxentech.io" target="_blank" rel="noopener">NyxenTech</a>
+                <span class="exp-badge" data-i18n="exp3.badge">Poste actuel</span>
+              </div>
+              <p class="exp-card__sub" data-i18n="exp3.sub">Cabinet spécialisé en infrastructure cloud et cybersécurité pour startups et fintechs</p>
+            </div>
+            <span class="exp-card__date mono">Nov. 2025 – <span data-i18n="tl.present">Présent</span> &nbsp;·&nbsp; Remote</span>
+          </div>
+          <ul class="exp-card__bullets">
+            <li data-i18n="exp3.l1">Conception et déploiement d'architectures AWS Zero Trust pour startups fintech en phase de certification SOC 2 Type II : IAM least-privilege, network policies inter-pods, chiffrement bout en bout et gestion des secrets via HashiCorp Vault.</li>
+            <li data-i18n="exp3.l2">Intégration de pipelines DevSecOps complets (SAST, DAST, scan d'images Trivy, OPA Gatekeeper) pour automatiser les contrôles de conformité à chaque release — réduction des findings critiques à zéro avant audit.</li>
+            <li data-i18n="exp3.l3">Durcissement post-incident d'environnements Kubernetes en urgence : reconstruction avec OPA Gatekeeper, network policies, détection des menaces en temps réel et playbook de réponse aux incidents.</li>
+            <li data-i18n="exp3.l4">Pipelines GitOps complets (GitHub Actions, ArgoCD) avec déploiements Blue-Green, PR previews, gates de tests et rollback sur incident — temps de déploiement réduit de 45 min à moins de 2 min.</li>
+            <li data-i18n="exp3.l5">Audit et optimisation des coûts AWS : right-sizing, réservations et élimination des ressources inutilisées — réduction moyenne de 40 % des dépenses cloud chez les clients accompagnés.</li>
+          </ul>
+          <div class="exp-card__stack">
+            <span>AWS</span><span>Zero Trust</span><span>SOC 2</span>
+            <span>HashiCorp Vault</span><span>OPA Gatekeeper</span><span>Trivy</span>
+            <span>SAST / DAST</span><span>GitOps</span><span>ArgoCD</span>
+            <span>GitHub Actions</span><span>Kubernetes</span><span>FinOps</span>
+          </div>
+        </div>
+
+        <!-- Kaeyros Analytics -->
+        <div class="exp-card reveal d1">
+          <div class="exp-card__header">
+            <div class="exp-card__left">
+              <h3 data-i18n="exp1.title">Ingénieur DevSecOps & Cloud</h3>
+              <div class="exp-card__company">
+                <span>Kaeyros Analytics</span>
+              </div>
+              <p class="exp-card__sub" data-i18n="exp1.sub">Yaoundé, Cameroun · Hybride · 5+ projets clients simultanés, 30+ applications supervisées</p>
+            </div>
+            <span class="exp-card__date mono">Sept. 2023 – Fév. 2026</span>
+          </div>
+          <ul class="exp-card__bullets">
+            <li data-i18n="exp1.s1l1">Pipelines CI/CD GitOps (ArgoCD) — 50+ déploiements automatisés/semaine, temps de production réduit de 2h à 15min (−87%).</li>
+            <li data-i18n="exp1.s1l2">Sécurité complète : RBAC, chiffrement repos/transit, HashiCorp Vault, scans automatisés (Snyk, SonarQube, Gitleaks).</li>
+            <li data-i18n="exp1.s2l1">Conception et gestion de 8 clusters Kubernetes multi-environnements — 1M+ requêtes/jour, 99,95% uptime.</li>
+            <li data-i18n="exp1.s2l2">Réduction de 60% des coûts cloud (1 500$ → 600$/mois) par redimensionnement, instances réservées et nettoyage d'infrastructure inutilisée.</li>
+            <li data-i18n="exp1.s2l3">Architecture backup & disaster recovery — backups chiffrés quotidiens S3, RTO 1h / RPO 15min.</li>
+            <li data-i18n="exp1.s3l2">Stack monitoring complet (Prometheus, Grafana, Uptime Kuma) pour 30+ applications avec alertes proactives et runbooks.</li>
+          </ul>
+          <div class="exp-card__stack">
+            <span>Kubernetes RKE2</span><span>DevSecOps</span><span>ArgoCD</span>
+            <span>HashiCorp Vault</span><span>Prometheus</span><span>Grafana</span>
+            <span>Terraform</span><span>Ansible</span><span>AWS</span><span>FinOps</span>
+          </div>
+        </div>
+
+        <!-- Freelance -->
+        <div class="exp-card reveal d2">
+          <div class="exp-card__header">
+            <div class="exp-card__left">
+              <h3 data-i18n="exp2.title">Backend Developer & Cloud Consultant</h3>
+              <div class="exp-card__company">
+                <span data-i18n="exp2.company">Freelance · Remote</span>
+              </div>
+              <p class="exp-card__sub" data-i18n="exp2.sub">10+ APIs RESTful en production, migrations cloud IaC, plateformes gouvernementales allemandes</p>
+            </div>
+            <span class="exp-card__date mono">Jan. 2021 – Août 2023</span>
+          </div>
+          <ul class="exp-card__bullets">
+            <li data-i18n="exp2.s1l1">10+ APIs RESTful et GraphQL servant 50K+ utilisateurs actifs quotidiens, temps de réponse &lt; 200ms.</li>
+            <li data-i18n="exp2.s1l2">4 plateformes gouvernementales allemandes (MIQ, DINA, MIRA, MEDAR) — données sensibles, conformité RGPD stricte.</li>
+            <li data-i18n="exp2.s1l3">Architecture event-driven avec queues de messages et systèmes pub/sub temps-réel (Socket.io, Redis).</li>
+            <li data-i18n="exp2.s2l1">Optimisation PostgreSQL — réduction de la latence de 30% par indexation ciblée, cache Redis (−75% temps de requête) et connection pooling.</li>
+            <li data-i18n="exp2.s2l3">Accompagnement de PME à l'adoption de l'IaC (Terraform) — réduction des déploiements manuels de ~70%.</li>
+          </ul>
+          <div class="exp-card__stack">
+            <span>NestJS</span><span>TypeScript</span><span>Node.js</span>
+            <span>PostgreSQL</span><span>Redis</span><span>AWS</span>
+            <span>Terraform</span><span>OAuth2</span><span>GraphQL</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SKILLS ═══════════════════════════════════════════════════ -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="skills.label">Compétences</span>
+        <h2 class="section-title" data-i18n="skills.title">Stack technique complet.</h2>
+      </div>
+
+      <div class="skills__grid">
+
+        <div class="skill-block reveal">
+          <div class="sk-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 2 17 12 22 22 17 22 7"/><polyline points="12 22 12 12"/><line x1="2" y1="7" x2="12" y2="12"/><line x1="22" y1="7" x2="12" y2="12"/></svg>
+          </div>
+          <h3 data-i18n="sk1.title">Kubernetes & Containers</h3>
+          <div class="sk-tags">
+            <span>Kubernetes (multi-cluster)</span>
+            <span>Docker</span>
+            <span>Helm</span>
+            <span>Kustomize</span>
+            <span>ArgoCD</span>
+            <span>FluxCD</span>
+            <span>Istio</span>
+            <span>RKE2</span>
+            <span>AWS ECS</span>
+            <span>HPA / VPA</span>
+          </div>
+        </div>
+
+        <div class="skill-block reveal d1">
+          <div class="sk-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+          </div>
+          <h3 data-i18n="sk2.title">Cloud & Infrastructure</h3>
+          <div class="sk-tags">
+            <span>AWS (EKS, ECS, S3, Lambda)</span>
+            <span>RDS / DynamoDB</span>
+            <span>CloudWatch</span>
+            <span>SQS</span>
+            <span>GCP</span>
+            <span>Azure</span>
+            <span>VPC Design</span>
+            <span>Load Balancing</span>
+            <span>Multi-AZ HA</span>
+          </div>
+        </div>
+
+        <div class="skill-block reveal d2">
+          <div class="sk-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          <h3 data-i18n="sk3.title">CI/CD & DevOps</h3>
+          <div class="sk-tags">
+            <span>GitHub Actions</span>
+            <span>GitLab CI</span>
+            <span>Jenkins</span>
+            <span>Azure DevOps</span>
+            <span>Blue/Green Deploy</span>
+            <span>GitOps</span>
+            <span>Terraform</span>
+            <span>Ansible</span>
+            <span>CloudFormation</span>
+          </div>
+        </div>
+
+        <div class="skill-block reveal d3">
+          <div class="sk-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 data-i18n="sk4.title">Cybersecurity & DevSecOps</h3>
+          <div class="sk-tags">
+            <span>HashiCorp Vault</span>
+            <span>SAST / DAST</span>
+            <span>SonarQube</span>
+            <span>Semgrep</span>
+            <span>OWASP ZAP</span>
+            <span>Trivy</span>
+            <span>Snyk</span>
+            <span>Gitleaks</span>
+            <span>RBAC</span>
+            <span>JWT / OAuth2</span>
+            <span>IAM</span>
+            <span>Zero Trust</span>
+            <span>GDPR</span>
+          </div>
+        </div>
+
+        <div class="skill-block reveal">
+          <div class="sk-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3 data-i18n="sk5.title">Backend Development</h3>
+          <div class="sk-tags">
+            <span>Node.js</span>
+            <span>NestJS</span>
+            <span>Express.js</span>
+            <span>Python (FastAPI)</span>
+            <span>TypeScript</span>
+            <span>REST API</span>
+            <span>GraphQL</span>
+            <span>Microservices</span>
+            <span>Event-driven</span>
+          </div>
+        </div>
+
+        <div class="skill-block reveal d1">
+          <div class="sk-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3 data-i18n="sk6.title">Monitoring & Observability</h3>
+          <div class="sk-tags">
+            <span>Prometheus</span>
+            <span>Grafana</span>
+            <span>OpenTelemetry</span>
+            <span>Uptime Kuma</span>
+            <span>ELK Stack</span>
+            <span>Loki</span>
+            <span>Fluentd</span>
+            <span>CloudWatch</span>
+            <span>Splunk</span>
+            <span>SLO / SLA</span>
+            <span>Auto-healing</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ PROJECTS ══════════════════════════════════════════════════ -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="proj.label">Projets</span>
+        <h2 class="section-title" data-i18n="proj.title">Systèmes en production.</h2>
+        <p class="section-sub" data-i18n="proj.sub">Pas des démos. Des systèmes réels, actifs, en production.</p>
+      </div>
+
+      <div class="projects__grid">
+
+        <div class="proj-card reveal">
+          <div class="pc-header">
+            <span class="pc-tag" data-i18n="p1.tag">Gouvernemental · NRW Allemagne</span>
+            <div class="pc-links">
+              <a href="https://miq.nrw/de" target="_blank" rel="noopener" class="pc-link" title="MIQ">↗ MIQ</a>
+              <a href="https://dina.nrw/de" target="_blank" rel="noopener" class="pc-link" title="DINA">↗ DINA</a>
+              <a href="https://mira.nrw/de" target="_blank" rel="noopener" class="pc-link" title="MIRA">↗ MIRA</a>
+              <a href="https://medar.nrw/de" target="_blank" rel="noopener" class="pc-link" title="MEDAR">↗ MEDAR</a>
+            </div>
+          </div>
+          <h3 data-i18n="p1.title">Projet Anti-D — Plateformes Gouvernementales (NRW)</h3>
+          <p data-i18n="p1.desc">4 plateformes publiques pour signalement de discrimination. Infrastructure Kubernetes multi-clusters hautement sécurisée (RKE2) pour données gouvernementales sensibles — conformité RGPD stricte, DevSecOps complet.</p>
+          <div class="pc-metrics">
+            <div class="pcm"><span class="pcm-val">3</span><span class="pcm-l" data-i18n="p1.m1">clusters K8s</span></div>
+            <div class="pcm"><span class="pcm-val">50%</span><span class="pcm-l" data-i18n="p1.m2">coûts réduits</span></div>
+            <div class="pcm"><span class="pcm-val">99.9%</span><span class="pcm-l" data-i18n="p1.m3">uptime</span></div>
+          </div>
+          <div class="pc-stack">
+            <span>NestJS</span><span>TypeScript</span><span>Kubernetes (RKE2)</span>
+            <span>HashiCorp Vault</span><span>Trivy</span><span>ArgoCD</span>
+            <span>Grafana</span><span>Zero Trust</span>
+          </div>
+        </div>
+
+        <div class="proj-card reveal d1">
+          <div class="pc-header">
+            <span class="pc-tag" data-i18n="p2.tag">Plateforme éducative · SaaS</span>
+            <div class="pc-links">
+              <a href="https://www.eze-platform.com" target="_blank" rel="noopener" class="pc-link">↗ eze-platform.com</a>
+            </div>
+          </div>
+          <h3 data-i18n="p2.title">EZE Platform — SaaS Éducatif Cloud-Native</h3>
+          <p data-i18n="p2.desc">Plateforme scientifique et éducative pour chercheurs et étudiants africains (réseau social, bibliothèque numérique, e-learning). Architecture AWS multi-tenant (EKS, RDS Multi-AZ, S3, CloudFront) avec isolation stricte des données par tenant et blue-green deployments.</p>
+          <div class="pc-metrics">
+            <div class="pcm"><span class="pcm-val">10K+</span><span class="pcm-l" data-i18n="p2.m1">users simultanés</span></div>
+            <div class="pcm"><span class="pcm-val">99.95%</span><span class="pcm-l" data-i18n="p2.m2">disponibilité</span></div>
+            <div class="pcm"><span class="pcm-val">0</span><span class="pcm-l" data-i18n="p2.m3">downtime deploy</span></div>
+          </div>
+          <div class="pc-stack">
+            <span>Node.js</span><span>NestJS</span><span>AWS EKS</span>
+            <span>RDS Multi-AZ</span><span>CloudFront</span><span>S3</span>
+            <span>CloudWatch</span><span>GitHub Actions</span>
+          </div>
+        </div>
+
+        <div class="proj-card reveal d2">
+          <div class="pc-header">
+            <span class="pc-tag" data-i18n="p3.tag">Campagne nationale · B2B</span>
+            <div class="pc-links">
+              <a href="https://sem-a.com/fr" target="_blank" rel="noopener" class="pc-link">↗ sem-a.com</a>
+            </div>
+          </div>
+          <h3 data-i18n="p3.title">SEMA — Campagne Nationale Boissons du Cameroun (SABC)</h3>
+          <p data-i18n="p3.desc">Infrastructure cloud d'un écosystème B2B multi-services (SEMA Travel, Chatbot WhatsApp, suivi des présences) pour la campagne nationale de 6 mois de Boissons du Cameroun (SABC). Architecture AWS auto-scalable absorbant des pics à 1M+ requêtes sans rupture de SLA.</p>
+          <div class="pc-metrics">
+            <div class="pcm"><span class="pcm-val">1M+</span><span class="pcm-l" data-i18n="p3.m1">requêtes/campagne</span></div>
+            <div class="pcm"><span class="pcm-val">6 mois</span><span class="pcm-l" data-i18n="p3.m2">0 incident SLA</span></div>
+          </div>
+          <div class="pc-stack">
+            <span>AWS EC2</span><span>ALB</span><span>RDS</span>
+            <span>Auto Scaling</span><span>Ansible</span><span>Terraform</span>
+            <span>Prometheus</span>
+          </div>
+        </div>
+
+        <div class="proj-card reveal d3">
+          <div class="pc-header">
+            <span class="pc-tag" data-i18n="p4.tag">Freelance · E-commerce</span>
+          </div>
+          <h3 data-i18n="p4.title">Plateforme E-commerce — Backend NestJS</h3>
+          <p data-i18n="p4.desc">Backend complet avec NestJS et PostgreSQL. Intégration passerelles de paiement (Stripe, PayPal), gestion d'inventaire, traitement de commandes. Système de chat temps-réel via Socket.io et Redis pub/sub.</p>
+          <div class="pc-metrics">
+            <div class="pcm"><span class="pcm-val">5K+</span><span class="pcm-l" data-i18n="p4.m1">transactions/mois</span></div>
+            <div class="pcm"><span class="pcm-val">1000+</span><span class="pcm-l" data-i18n="p4.m2">connexions simultanées</span></div>
+          </div>
+          <div class="pc-stack">
+            <span>NestJS</span><span>PostgreSQL</span><span>Redis</span>
+            <span>Socket.io</span><span>Stripe</span><span>PayPal</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CERTIFICATIONS ════════════════════════════════════════════ -->
+  <section class="certs section" id="certs">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="certs.label">Certifications</span>
+        <h2 class="section-title" data-i18n="certs.title">Certifié. Vérifié.</h2>
+      </div>
+      <div class="certs__grid">
+
+        <a href="https://www.credly.com/badges/00883374-c814-4ab5-b847-0f479e2e3b33" target="_blank" rel="noopener" class="cert-card reveal">
+          <div class="cc-icon cc-icon--aws">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.07.056.14.056.2 0 .087-.052.175-.164.263l-.543.362c-.077.052-.155.078-.224.078-.087 0-.174-.04-.261-.12a2.7 2.7 0 01-.313-.41 6.72 6.72 0 01-.27-.516c-.678.8-1.53 1.2-2.556 1.2-.73 0-1.31-.21-1.737-.63-.427-.42-.64-.978-.64-1.674 0-.74.262-1.34.79-1.797.526-.456 1.227-.684 2.115-.684.294 0 .596.026.914.07.319.044.645.113.988.2v-.628c0-.653-.136-1.11-.4-1.375-.27-.264-.727-.394-1.376-.394-.295 0-.598.035-.907.108-.31.072-.614.164-.907.276-.136.058-.235.09-.296.103-.062.012-.107.018-.14.018-.122 0-.183-.09-.183-.274v-.432c0-.14.017-.246.057-.313a.59.59 0 01.226-.183c.295-.15.65-.277 1.063-.378a5.1 5.1 0 011.3-.156c.99 0 1.714.225 2.18.674.46.45.693 1.133.693 2.054l.006 2.71zm-3.53.97c.283 0 .575-.052.882-.156.307-.104.58-.292.81-.548.137-.164.24-.344.292-.553.05-.207.082-.457.082-.75v-.362a7.199 7.199 0 00-.793-.147 6.496 6.496 0 00-.81-.052c-.578 0-1.003.113-1.287.344-.283.232-.422.556-.422.978 0 .4.1.697.31.898.202.205.49.307.868.307.022-.01.046-.01.069-.01zM13.99 12.27c-.154 0-.258-.026-.326-.083a.67.67 0 01-.19-.313l-2.127-7.006c-.07-.226-.104-.373-.104-.444 0-.174.087-.27.261-.27h1.065c.163 0 .274.026.336.083a.647.647 0 01.184.313l1.52 5.992 1.411-5.992a.608.608 0 01.178-.313.55.55 0 01.344-.083h.869c.163 0 .274.026.344.083a.6.6 0 01.175.313l1.43 6.071 1.568-6.07a.664.664 0 01.19-.314.59.59 0 01.342-.083h1.012c.174 0 .266.09.266.27 0 .053-.01.108-.022.17-.012.062-.036.148-.076.265l-2.18 7.005a.636.636 0 01-.19.314c-.07.057-.18.083-.327.083h-.932a.58.58 0 01-.343-.083.648.648 0 01-.177-.32l-1.403-5.826-1.395 5.82a.639.639 0 01-.177.32.572.572 0 01-.344.083l-.946.003zm11.623.257c-.564 0-1.127-.064-1.673-.192-.546-.128-.97-.27-1.25-.427-.175-.1-.294-.208-.332-.312a.79.79 0 01-.057-.296v-.449c0-.183.069-.274.2-.274.052 0 .103.008.156.026.052.018.13.052.218.087.294.13.614.233.957.303a5.16 5.16 0 001.02.104c.54 0 .962-.096 1.261-.288.3-.192.451-.467.451-.82 0-.241-.075-.44-.228-.601-.152-.161-.44-.308-.862-.448l-1.238-.384c-.625-.196-1.088-.485-1.38-.867a2.078 2.078 0 01-.434-1.28c0-.37.078-.694.236-.972.157-.277.37-.519.633-.71.262-.197.56-.344.905-.445a3.86 3.86 0 011.078-.148c.19 0 .386.01.576.036.196.026.373.062.546.104.166.044.326.09.472.14.148.05.262.1.345.15.116.07.2.14.249.218a.54.54 0 01.07.283v.415c0 .183-.07.278-.2.278a.929.929 0 01-.344-.113c-.46-.208-.975-.313-1.545-.313-.49 0-.876.083-1.15.252-.274.169-.413.424-.413.77 0 .24.085.444.254.61.17.166.484.33.94.48l1.213.383c.617.196 1.064.473 1.338.831.274.358.408.768.408 1.224 0 .378-.075.72-.222 1.016a2.34 2.34 0 01-.63.762c-.272.21-.596.371-.972.48a4.31 4.31 0 01-1.255.174z"/></svg>
+          </div>
+          <div class="cc-info">
+            <h4>AWS Certified Solutions Architect</h4>
+            <span class="mono">Associate · Amazon Web Services</span>
+          </div>
+          <svg class="cc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+
+        <a href="https://engineer.kodekloud.com/certificate-verification/0b5ac8d3-5ee3-41c6-a584-31477414c346" target="_blank" rel="noopener" class="cert-card reveal d1">
+          <div class="cc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 2 17 12 22 22 17 22 7"/><polyline points="12 22 12 12"/><line x1="2" y1="7" x2="12" y2="12"/><line x1="22" y1="7" x2="12" y2="12"/></svg>
+          </div>
+          <div class="cc-info">
+            <h4>100 Days of DevOps</h4>
+            <span class="mono">KodeKloud · Ansible, K8s, CI/CD, Bash</span>
+          </div>
+          <svg class="cc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+
+        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/NHHDN4QMQCV6" target="_blank" rel="noopener" class="cert-card reveal d2">
+          <div class="cc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+          </div>
+          <div class="cc-info">
+            <h4>DevOps on AWS Specialization</h4>
+            <span class="mono">Coursera · Infrastructure & Automation</span>
+          </div>
+          <svg class="cc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+
+        <a href="https://drive.google.com/file/d/1Jm5lS81IGvLo3-tZUld4D0AfV5LPE0H8/view" target="_blank" rel="noopener" class="cert-card reveal d3">
+          <div class="cc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <div class="cc-info">
+            <h4>Software Engineering Program</h4>
+            <span class="mono">ALX Africa · Backend Specialization</span>
+          </div>
+          <svg class="cc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+
+        <div class="cert-card cert-card--edu reveal">
+          <div class="cc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg>
+          </div>
+          <div class="cc-info">
+            <h4>Cloud Developer Nanodegree</h4>
+            <span class="mono">Udacity · Cloud & Architecture</span>
+          </div>
+        </div>
+
+        <div class="cert-card cert-card--edu reveal d1">
+          <div class="cc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+          <div class="cc-info">
+            <h4>AI Career Essentials (AICE)</h4>
+            <span class="mono">ALX Africa · AI Starter Kit</span>
+          </div>
+        </div>
+
+        <div class="cert-card cert-card--progress reveal d2">
+          <div class="cc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="cc-info">
+            <h4>CKA — Certified Kubernetes Administrator</h4>
+            <span class="mono cc-wip" data-i18n="certs.inprogress">En cours · CNCF</span>
+          </div>
+          <span class="cc-badge" data-i18n="certs.soon">Bientôt</span>
+        </div>
+
+        <div class="cert-card cert-card--edu reveal d3">
+          <div class="cc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div class="cc-info">
+            <h4 data-i18n="certs.degree">Licence Génie Logiciel (Bac+3)</h4>
+            <span class="mono">Université de Siantou · Cameroun</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ═══════════════════════════════════════════════════ -->
+  <section class="contact section" id="contact">
+    <div class="container contact__inner">
+
+      <div class="contact__left reveal">
+        <span class="eyebrow" data-i18n="contact.label">Contact</span>
+        <h2 class="section-title" data-i18n="contact.title">Travaillons ensemble.</h2>
+        <p class="contact__desc" data-i18n="contact.desc">
+          Disponible pour des projets freelance, des missions de consulting Cloud/DevOps, ou des opportunités full-time. Réponse sous 24h.
+        </p>
+        <div class="contact__links">
+          <a href="mailto:kielze86@gmail.com" class="cl-item">
+            <div class="cl-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <span class="cl-label" data-i18n="contact.email">Email</span>
+              <span class="cl-val">kielze86@gmail.com</span>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/ezekiel-soh-dombissi-a1591b240/" target="_blank" rel="noopener" class="cl-item">
+            <div class="cl-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <div>
+              <span class="cl-label">LinkedIn</span>
+              <span class="cl-val">ezekiel-soh-dombissi</span>
+            </div>
+          </a>
+          <a href="https://github.com/theopen4" target="_blank" rel="noopener" class="cl-item">
+            <div class="cl-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </div>
+            <div>
+              <span class="cl-label">GitHub</span>
+              <span class="cl-val">github.com/theopen4</span>
+            </div>
+          </a>
+          <div class="cl-item cl-item--plain">
+            <div class="cl-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.29 6.29l1.41-1.41a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <span class="cl-label" data-i18n="contact.phone">Téléphone</span>
+              <span class="cl-val">+237 656 18 88 16</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact__form-wrap reveal d2">
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="cf-row">
+            <div class="cf-group">
+              <label for="name" data-i18n="form.name">Nom complet</label>
+              <input type="text" id="name" name="name" placeholder="Alex Martin" required />
+            </div>
+            <div class="cf-group">
+              <label for="email" data-i18n="form.email">Email</label>
+              <input type="email" id="email" name="email" placeholder="alex@company.com" required />
+            </div>
+          </div>
+          <div class="cf-group">
+            <label for="subject" data-i18n="form.subject">Sujet</label>
+            <select id="subject" name="subject">
+              <option value="" disabled selected data-i18n="form.subject_ph">Type de mission...</option>
+              <option data-i18n="form.s1">Mission DevOps / Cloud</option>
+              <option data-i18n="form.s2">Architecture & Conseil</option>
+              <option data-i18n="form.s3">Cybersecurity / DevSecOps</option>
+              <option data-i18n="form.s4">Développement Backend</option>
+              <option data-i18n="form.s5">Opportunité full-time</option>
+              <option data-i18n="form.s6">Autre</option>
+            </select>
+          </div>
+          <div class="cf-group">
+            <label for="message" data-i18n="form.message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Décrivez votre projet ou opportunité..." required></textarea>
+          </div>
+          <button type="submit" class="cf-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+            <span data-i18n="form.send">Envoyer le message</span>
+          </button>
+          <p class="cf-note mono" data-i18n="form.note">Réponse sous 24h · Disponible pour missions remote</p>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div class="fs-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3 data-i18n="form.success_title">Message reçu.</h3>
+          <p data-i18n="form.success_body">Je vous réponds dans les 24 heures.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">
+        <div class="logo">
+          <div class="logo-avatar">EZ</div>
+          <div class="logo-info">
+            <span class="logo-name">Ezekiel Soh</span>
+            <span class="logo-role mono">Cloud & DevOps Engineer</span>
+          </div>
+        </div>
+        <p class="footer__desc mono" data-i18n="footer.desc">kielze86@gmail.com · Yaoundé, Cameroun</p>
+      </div>
+      <div class="footer__right">
+        <a href="https://github.com/theopen4" target="_blank" rel="noopener" class="footer__link">GitHub</a>
+        <a href="https://www.linkedin.com/in/ezekiel-soh-dombissi-a1591b240/" target="_blank" rel="noopener" class="footer__link">LinkedIn</a>
+        <a href="#contact" class="footer__link" data-i18n="footer.contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <span data-i18n="footer.copy">&copy; 2026 Dombissi Soh Kamte Ezekiel · Tous droits réservés</span>
+        <span class="mono">Build with ❤ in Yaoundé 🇨🇲</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
